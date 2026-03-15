@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Tenho uma pergunta 💖</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+font-family:Arial;
+text-align:center;
+overflow:hidden;
+}
+
+.card{
+padding:40px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.3);
+background:white;
+}
+
+#nao{
+position:absolute;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1 class="mb-3">💖 Aceito namorar com você. 💖</h1>
+
+<p>Promete me fazer feliz todos os dias?</p>
+
+<div class="mt-4">
+
+<button class="btn btn-success btn-lg me-3" onclick="aceitou()">
+SIM ❤️
+</button>
+
+<button class="btn btn-danger btn-lg" id="nao">
+NÃO 😅
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+let btnNao = document.getElementById("nao")
+
+function fugir(){
+
+let largura = window.innerWidth - 100
+let altura = window.innerHeight - 100
+
+let x = Math.random() * largura
+let y = Math.random() * altura
+
+btnNao.style.left = x + "px"
+btnNao.style.top = y + "px"
+
+}
+
+// PC (mouse passando)
+btnNao.addEventListener("mouseover", fugir)
+
+// celular ou clique
+btnNao.addEventListener("click", function(e){
+e.preventDefault()
+fugir()
+})
+
+function aceitou(){
+
+let numero = "5511999999999"
+
+let mensagem = encodeURIComponent(
+"Eu aceito namorar com você ❤️🥰"
+)
+
+window.open(`https://wa.me/${numero}?text=${mensagem}`)
+
+}
+
+</script>
+
+</body>
+</html>
